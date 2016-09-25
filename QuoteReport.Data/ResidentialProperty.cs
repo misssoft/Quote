@@ -11,7 +11,7 @@ namespace QuoteReport.Data
         public double Value { get;  }
         public bool IsFreehold { get;  }
         public bool IsJoinedOwned { get; }
-        public DateTime TrasactionDate { get;  }
+        public DateTime TransactionDate { get;  }
 
         public string ContactEmail { get; }
 
@@ -20,7 +20,7 @@ namespace QuoteReport.Data
             Value = value;
             IsFreehold = isFreehold;
             IsJoinedOwned = isJoinedOwned;
-            TrasactionDate = date;
+            TransactionDate = date;
             ContactEmail = email;
         }
      }
