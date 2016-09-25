@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteReport.Console", "Quot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteReport.Service.Tests", "QuoteReport.Service.Tests\QuoteReport.Service.Tests.csproj", "{067456C0-086C-46A8-B37F-1405717B7BFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteReport.Function", "QuoteReport.Function\QuoteReport.Function.csproj", "{B7C9A5A8-F133-4EA1-8A87-FADD89AB6A84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteReport.Function.Tests", "QuoteReport.Function.Tests\QuoteReport.Function.Tests.csproj", "{1CC70903-8004-4D4C-9B84-A986F2262400}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{067456C0-086C-46A8-B37F-1405717B7BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{067456C0-086C-46A8-B37F-1405717B7BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{067456C0-086C-46A8-B37F-1405717B7BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7C9A5A8-F133-4EA1-8A87-FADD89AB6A84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7C9A5A8-F133-4EA1-8A87-FADD89AB6A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7C9A5A8-F133-4EA1-8A87-FADD89AB6A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7C9A5A8-F133-4EA1-8A87-FADD89AB6A84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CC70903-8004-4D4C-9B84-A986F2262400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CC70903-8004-4D4C-9B84-A986F2262400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CC70903-8004-4D4C-9B84-A986F2262400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CC70903-8004-4D4C-9B84-A986F2262400}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,6 @@
-﻿namespace QuoteReport.Console
+﻿using QuoteReport.Function;
+
+namespace QuoteReport.Console
 {
     using QuoteReport.Service;
     class Program
@@ -7,6 +9,10 @@
         {
             var service = QuoteReportServiceFactory.CreateQuoteReportService();
             service.GenerateQuoteReport();
+            System.Console.ReadLine();
+
+            var function = QuoteReportFunctionFactory.CreateReportFunction();
+            function.Invoke();
             System.Console.ReadLine();
         }
     }

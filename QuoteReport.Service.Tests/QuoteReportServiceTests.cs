@@ -9,7 +9,7 @@ namespace QuoteReport.Service.Tests
     public class QuoteReportServiceTests
     {
         [Test]
-        public void GenerateBatchReport_Create_Reports()
+        public void GenerateQuoteReport_Create_Reports()
         {
             // Arrange
             var propertyRepoMock = MockRepository.GenerateMock<IResidentialProperties>();
