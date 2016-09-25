@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PropertyQuote", "PropertyQuote\PropertyQuote.xproj", "{889C25E9-91E5-40A2-9EC3-0648EC619F38}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PropertyQuote.Web", "PropertyQuote\PropertyQuote.Web.xproj", "{889C25E9-91E5-40A2-9EC3-0648EC619F38}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteReport.Data", "QuoteReport.Data\QuoteReport.Data.csproj", "{E939A422-0A42-4BA9-ADFB-1D8B2F267EF7}"
 EndProject
