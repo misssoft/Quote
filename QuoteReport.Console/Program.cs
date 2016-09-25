@@ -11,8 +11,12 @@ namespace QuoteReport.Console
             service.GenerateQuoteReport();
             System.Console.ReadLine();
 
-            var function = QuoteReportFunctionFactory.CreateReportFunction();
-            function.Invoke();
+            var residentialFun = QuoteReportFunctionFactory.CreateReportFunction();
+            residentialFun.Invoke();
+            System.Console.ReadLine();
+
+            var nonResidentialFun = QuoteReportFunctionFactory.CreateReportNonFunctionNonResidential();
+            nonResidentialFun.Invoke();
             System.Console.ReadLine();
         }
     }

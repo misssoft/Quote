@@ -20,5 +20,17 @@ namespace QuoteReport.Function
                 sendEmail(quote.Property.ContactEmail, quote.ToString());
             }
         }
+
+        public static void GenerateNonResidentialQuoteReport(Func<IEnumerable<NonResidentialProperty>> getPropertiesforQuote,
+                                               Func<NonResidentialProperty, NonResidentialQuote> calculateQuote,
+                                               Action<string, string> sendEmail)
+        {
+            var properties = getPropertiesforQuote();
+            foreach (var house in properties)
+            {
+                var quote = calculateQuote(house);
+                sendEmail(quote.Property.ContactEmail, quote.ToString());
+            }
+        }
     }
 }
