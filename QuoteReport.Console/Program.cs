@@ -14,10 +14,6 @@ namespace QuoteReport.Console
             var residentialFun = QuoteReportFunctionFactory.CreateReportFunction();
             residentialFun.Invoke();
             System.Console.ReadLine();
-
-            var nonResidentialFun = QuoteReportFunctionFactory.CreateReportNonFunctionNonResidential();
-            nonResidentialFun.Invoke();
-            System.Console.ReadLine();
         }
     }
 }

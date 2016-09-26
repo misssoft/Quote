@@ -10,7 +10,7 @@ namespace QuoteReport.Service
     {
         public static QuoteReportService CreateQuoteReportService()
         {
-            return  new QuoteReportService(new Emailer(), new ResidentialPropertyQuoteCalculator(), new ResidentialProperties());
+            return  new QuoteReportService(new Emailer(), new PropertyQuoteCalculator(), new Properties());
         }
     }
 }

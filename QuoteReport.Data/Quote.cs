@@ -8,19 +8,17 @@ namespace QuoteReport.Data
 {
     public class Quote
     {
-        public ResidentialProperty Property { get; set; }
+        public Property Property { get; set; }
 
         public double Stampduty { get; set; }
 
         public double LegalFee { get; set; }
 
-        public double Total => Stampduty + LegalFee;
+        public double Total { get; set; }
 
-        public Quote(ResidentialProperty property)
+        public Quote(Property property)
         {
             Property = property;
-            Stampduty = property.Value*0.05;
-            LegalFee = property.Value*0.005;
         }
 
         public override string ToString()

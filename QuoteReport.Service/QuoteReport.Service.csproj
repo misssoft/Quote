@@ -44,12 +44,12 @@
     <Compile Include="IEmailer.cs" />
     <Compile Include="IQuoteCalculator.cs" />
     <Compile Include="IQuoteReportService.cs" />
-    <Compile Include="IResidentialProperties.cs" />
+    <Compile Include="IProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuoteReportService.cs" />
     <Compile Include="QuoteReportServiceFactory.cs" />
-    <Compile Include="ResidentialPropertyQuoteCalculator.cs" />
-    <Compile Include="ResidentialProperties.cs" />
+    <Compile Include="PropertyQuoteCalculator.cs" />
+    <Compile Include="Properties.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuoteReport.Data\QuoteReport.Data.csproj">

@@ -9,20 +9,8 @@ namespace QuoteReport.Function
 {
     public static class QuoteReportFunction
     {
-        public static void GenerateQuoteReport(Func<IEnumerable<ResidentialProperty>> getPropertiesforQuote,
-                                               Func<ResidentialProperty, Quote> calculateQuote,
-                                               Action<string, string> sendEmail)
-        {
-            var properties = getPropertiesforQuote();
-            foreach (var house in properties)
-            {
-                var quote = calculateQuote(house);
-                sendEmail(quote.Property.ContactEmail, quote.ToString());
-            }
-        }
-
-        public static void GenerateNonResidentialQuoteReport(Func<IEnumerable<NonResidentialProperty>> getPropertiesforQuote,
-                                               Func<NonResidentialProperty, NonResidentialQuote> calculateQuote,
+        public static void GenerateQuoteReport(Func<IEnumerable<Property>> getPropertiesforQuote,
+                                               Func<Property, Quote> calculateQuote,
                                                Action<string, string> sendEmail)
         {
             var properties = getPropertiesforQuote();

@@ -16,14 +16,5 @@ namespace QuoteReport.Function
                 QuoteReportSupportFunction.Send
             );
         }
-
-        public static Action CreateReportNonFunctionNonResidential()
-        {
-            return () => QuoteReportFunction.GenerateNonResidentialQuoteReport(
-                QuoteReportSupportFunction.GetNonResidentialPropertiesForQuote,
-                QuoteReportSupportFunction.CalculateNonResidentialQuoteQuote,
-                QuoteReportSupportFunction.Send
-            );
-        }
     }
 }

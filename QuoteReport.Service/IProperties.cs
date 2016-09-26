@@ -7,8 +7,8 @@ using QuoteReport.Data;
 
 namespace QuoteReport.Service
 {
-    public interface IResidentialProperties
+    public interface IProperties
     {
-        IEnumerable<ResidentialProperty> GetPropertiesForQuote();
+        IEnumerable<Property> GetPropertiesForQuote();
     }
 }

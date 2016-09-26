@@ -14,32 +14,30 @@ namespace QuoteReport.Function
             Console.Out.WriteLine("Sent Email to: {0}, Body: '{1}'", toAddress, body);
         }
 
-        public static Quote CalculateQuote(ResidentialProperty property)
+        public static Quote CalculateQuote(Property property)
         {
             var quote = new Quote(property);
+            if (property.IsResidential)
+            {
+                quote.LegalFee = property.Value*0.005;
+                quote.Stampduty = property.Value*0.05;
+                quote.Total = quote.LegalFee + quote.Stampduty;
+            }
+            else
+            {
+                quote.LegalFee = property.Value * 0.01;
+                quote.Stampduty = property.Value * 0.1;
+                quote.Total = quote.LegalFee + quote.Stampduty;
+            }
             return quote;
         }
-
-        public static NonResidentialQuote CalculateNonResidentialQuoteQuote(NonResidentialProperty property)
+       
+        public static IEnumerable<Property> GetPropertiesForQuote()
         {
-            var quote = new NonResidentialQuote(property);
-            return quote;
-        }
-
-        public static IEnumerable<ResidentialProperty> GetPropertiesForQuote()
-        {
-            yield return new ResidentialProperty(125000, true, false, DateTime.Today, "house1@function.com");
-            yield return new ResidentialProperty(250000, false, true, DateTime.Today, "house2@function.com");
-            yield return new ResidentialProperty(500000, true, true, DateTime.Today, "house3@function.com");
-            yield return new ResidentialProperty(1000000, false, false, DateTime.Today, "house4@function.com");
-        }
-
-        public static IEnumerable<NonResidentialProperty> GetNonResidentialPropertiesForQuote()
-        {
-            yield return new NonResidentialProperty(125000, true,  "house1@function.com");
-            yield return new NonResidentialProperty(250000, false,  "house2@function.com");
-            yield return new NonResidentialProperty(500000, true, "house3@function.com");
-            yield return new NonResidentialProperty(1000000, false, "house4@function.com");
+            yield return new Property(125000, true, true, false, DateTime.Today, "residential1@function.com");
+            yield return new Property(250000, false,false, true, DateTime.Today, "commercialA@function.com");
+            yield return new Property(500000, true,true, true, DateTime.Today, "residential2@function.com");
+            yield return new Property(1000000, false, false, false, DateTime.Today, "commercialB@function.com");
         }
     }
 }

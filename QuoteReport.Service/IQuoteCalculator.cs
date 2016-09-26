@@ -9,6 +9,6 @@ namespace QuoteReport.Service
 {
     public interface IQuoteCalculator
     {
-        Quote CalculateQuote(ResidentialProperty property);
+        Quote CalculateQuote(Property property);
     }
 }

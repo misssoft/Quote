@@ -10,9 +10,9 @@ namespace QuoteReport.Service
     {
         private readonly IEmailer _emailer;
         private readonly IQuoteCalculator _calculator;
-        private readonly IResidentialProperties _propertiesRepo;
+        private readonly IProperties _propertiesRepo;
 
-        public QuoteReportService(IEmailer emailer, IQuoteCalculator calculator, IResidentialProperties properties)
+        public QuoteReportService(IEmailer emailer, IQuoteCalculator calculator, IProperties properties)
         {
             _emailer = emailer;
             _calculator = calculator;
