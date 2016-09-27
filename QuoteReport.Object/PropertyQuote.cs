@@ -4,26 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuoteReport.Data
+namespace QuoteReport.Object
 {
-    public class Property
+    public class PropertyObject
     {
-        public double Value { get;  }
+        public double Value { get; }
         public bool IsResidential { get; set; }
-        public bool IsFreehold { get;  }
+        public bool IsFreehold { get; }
         public bool IsJoinedOwned { get; }
-        public DateTime TransactionDate { get;  }
+        public DateTime TransactionDate { get; }
 
         public string ContactEmail { get; }
 
         public Property(double value, bool isResidential, bool isFreehold, bool isJoinedOwned, DateTime date, string email)
         {
             Value = value;
-            IsResidential = isResidential;
             IsFreehold = isFreehold;
             IsJoinedOwned = isJoinedOwned;
             TransactionDate = date;
             ContactEmail = email;
         }
-     }
+    }
 }

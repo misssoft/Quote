@@ -19,15 +19,15 @@ namespace QuoteReport.Function
             var quote = new Quote(property);
             if (property.IsResidential)
             {
-                quote.LegalFee = property.Value*0.005;
+                quote.AdminFee = property.Value*0.005;
                 quote.Stampduty = property.Value*0.05;
-                quote.Total = quote.LegalFee + quote.Stampduty;
+                quote.Total = quote.AdminFee + quote.Stampduty;
             }
             else
             {
-                quote.LegalFee = property.Value * 0.01;
+                quote.AdminFee = property.Value * 0.01;
                 quote.Stampduty = property.Value * 0.1;
-                quote.Total = quote.LegalFee + quote.Stampduty;
+                quote.Total = quote.AdminFee + quote.Stampduty;
             }
             return quote;
         }

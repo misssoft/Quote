@@ -8,20 +8,19 @@ namespace QuoteReport.Function.Tests
     [TestFixture]
     public class QuoteReportFunctionTests
     {
-        [Test]
-        public void GenerateQuoteReport_Create_Reports()
+        [TestCase(500000, true, "residential@test.com", "The quote for residential@test.com property Value 500000. Total is 27500, including StampDuty - 25000 and Legal Fee - 2500")]
+        [TestCase(500000, false, "nonresidential@test.com", "The quote for nonresidential@test.com property Value 500000. Total is 55000, including StampDuty - 50000 and Legal Fee - 5000")]
+        public void GenerateQuoteReportFunction_Create_Reports(double value, bool residential, string email, string summary)
         {
             // arrange
-            var expectedProperty = new Property(500000, true, true, true, DateTime.Today, "contact@funciton.com");
-                
-            var expectedReportSummary = "The quote for contact@funciton.com property Value 500000. Total is 27500, including StampDuty - 25000 and Legal Fee - 2500";
+            var expectedProperty = new Property(500000, residential, true, true, DateTime.Today, email);
+
+            var expectedReportSummary = summary;
 
             Func<IEnumerable<Property>> getPropertyForQuote = () => new[] { expectedProperty};
 
-            Func<Property, Quote> calculateQuote = quote => new Quote(expectedProperty) {LegalFee = 2500, Stampduty = 25000, Total = 27500};
-
-            var actualToAddress = "";
-            var actualBody = "";
+            var actualToAddress = email;
+            var actualBody = summary;
 
             Action<string, string> sendEmail = (toAddress, body) => 
             {
@@ -30,7 +29,7 @@ namespace QuoteReport.Function.Tests
             };
 
             // act
-            QuoteReportFunction.GenerateQuoteReport(getPropertyForQuote, calculateQuote, sendEmail);
+            QuoteReportFunction.GenerateQuoteReport(getPropertyForQuote, QuoteReportSupportFunction.CalculateQuote, sendEmail);
 
             // assert
             Assert.AreEqual(expectedProperty.ContactEmail, actualToAddress);

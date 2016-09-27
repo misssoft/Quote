@@ -12,7 +12,7 @@ namespace QuoteReport.Data
 
         public double Stampduty { get; set; }
 
-        public double LegalFee { get; set; }
+        public double AdminFee { get; set; }
 
         public double Total { get; set; }
 
@@ -23,7 +23,7 @@ namespace QuoteReport.Data
 
         public override string ToString()
         {
-            return $"The quote for {Property.ContactEmail} property Value {Property.Value}. Total is {Total}, including StampDuty - {Stampduty} and Legal Fee - {LegalFee}";
+            return $"The quote for {Property.ContactEmail} property Value {Property.Value}. Total is {Total}, including StampDuty - {Stampduty} and Legal Fee - {AdminFee}";
         }
 
     }
