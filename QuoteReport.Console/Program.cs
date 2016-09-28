@@ -3,9 +3,10 @@
 namespace QuoteReport.Console
 {
     using QuoteReport.Service;
-    class Program
+
+    internal class Program
     {
-       static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var service = QuoteReportServiceFactory.CreateQuoteReportService();
             service.GenerateQuoteReport();

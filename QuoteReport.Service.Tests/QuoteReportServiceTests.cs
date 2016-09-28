@@ -26,7 +26,8 @@ namespace QuoteReport.Service.Tests
             service.GenerateQuoteReport();
 
             // Assert
-            emailerMock.AssertWasCalled(x => x.Send(expectedProperty.ContactEmail, expectedReportSummary));
+            emailerMock.AssertWasCalled(x => x.Send(Arg<string>.Is.Equal(expectedProperty.ContactEmail), 
+                Arg<Quote>.Matches(p=>p.ToString() == summary)));
         }
     }
 }

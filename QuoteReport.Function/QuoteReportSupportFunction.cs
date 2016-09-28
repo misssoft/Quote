@@ -9,9 +9,9 @@ namespace QuoteReport.Function
 {
     public static class QuoteReportSupportFunction
     {
-        public static void Send(string toAddress, string body)
+        public static void Send(string contactEmail, Quote body)
         {
-            Console.Out.WriteLine("Sent Email to: {0}, Body: '{1}'", toAddress, body);
+            Console.Out.WriteLine("Sent Email to: {0}, Body: '{1}'", contactEmail, body.ToString());
         }
 
         public static Quote CalculateQuote(Property property)

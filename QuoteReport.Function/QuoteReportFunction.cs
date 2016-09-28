@@ -11,13 +11,13 @@ namespace QuoteReport.Function
     {
         public static void GenerateQuoteReport(Func<IEnumerable<Property>> getPropertiesforQuote,
                                                Func<Property, Quote> calculateQuote,
-                                               Action<string, string> sendEmail)
+                                               Action<string, Quote> sendEmail)
         {
             var properties = getPropertiesforQuote();
             foreach (var house in properties)
             {
                 var quote = calculateQuote(house);
-                sendEmail(quote.Property.ContactEmail, quote.ToString());
+                sendEmail(quote.Property.ContactEmail, quote);
             }
         }
     }

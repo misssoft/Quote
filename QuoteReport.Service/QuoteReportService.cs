@@ -23,7 +23,7 @@ namespace QuoteReport.Service
             {
                 var propertyQuote = new PropertyQuote(house);
                 var quote = propertyQuote.CalculateQuote();
-                _emailer.Send(quote.Property.ContactEmail,quote.ToString());
+                _emailer.Send(quote.Property.ContactEmail,quote);
             }
         }
     }

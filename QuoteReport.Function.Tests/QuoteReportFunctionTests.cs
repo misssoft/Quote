@@ -14,26 +14,24 @@ namespace QuoteReport.Function.Tests
         {
             // arrange
             var expectedProperty = new Property(500000, residential, true, true, DateTime.Today, email);
-
             var expectedReportSummary = summary;
 
             Func<IEnumerable<Property>> getPropertyForQuote = () => new[] { expectedProperty};
-
-            var actualToAddress = email;
-            var actualBody = summary;
-
-            Action<string, string> sendEmail = (toAddress, body) => 
+            var actualEmail = email;
+            var actualQuote = new Quote(expectedProperty);
+            
+            Action<string, Quote> sendEmail = (contactEmail, quote) =>
             {
-                actualToAddress = toAddress;
-                actualBody = body;
+                actualEmail = contactEmail;
+                actualQuote = quote;
             };
 
             // act
             QuoteReportFunction.GenerateQuoteReport(getPropertyForQuote, QuoteReportSupportFunction.CalculateQuote, sendEmail);
 
             // assert
-            Assert.AreEqual(expectedProperty.ContactEmail, actualToAddress);
-            Assert.AreEqual(expectedReportSummary, actualBody);
+            Assert.AreEqual(expectedProperty.ContactEmail, actualEmail);
+            Assert.AreEqual(expectedReportSummary, actualQuote.ToString());
         }
     }
 }
