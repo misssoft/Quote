@@ -11,7 +11,7 @@ namespace QuoteReport.Service
     {
         public void Send(string contactEmail, Quote quote)
         {
-            Console.Out.WriteLine("Sent Email to: {0}, Body: '{1}'", contactEmail, quote.ToString());
+            Console.Out.WriteLine("Sent Email to: {0}, Body: '{1}'", contactEmail, quote);
         }
     }
 }
