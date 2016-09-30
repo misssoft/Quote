@@ -21,7 +21,7 @@ namespace QuoteReport.Service
             var properties = _propertiesRepo.GetPropertiesForQuote();
             foreach (var house in properties)
             {
-                var propertyQuote = new PropertyQuote(house);
+                var propertyQuote = new PropertyQuoteCalculator(house);
                 var quote = propertyQuote.CalculateQuote();
                 _emailer.Send(quote.Property.ContactEmail,quote);
             }

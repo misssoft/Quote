@@ -7,19 +7,11 @@ using QuoteReport.Data;
 
 namespace QuoteReport.Service
 {
-    public class PropertyQuote
+    public class PropertyQuoteCalculator
     {
         public Property Property { get; }
-        public double Stampduty { get; set; }
-        public double AdminFee { get; set; }
-        public double Total { get; set; }
-        public PropertyQuote(Property property){
+        public PropertyQuoteCalculator(Property property){
             Property = property;
-        }
-        public override string ToString(){
-            return $"The quote for {Property.ContactEmail} property Value " +
-                   $"{Property.Value}. Total is {Total}, including StampDuty - " +
-                   $"{Stampduty} and Legal Fee - {AdminFee}";
         }
         public Quote CalculateQuote()
         {
